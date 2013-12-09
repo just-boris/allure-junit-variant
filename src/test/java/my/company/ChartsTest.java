@@ -11,7 +11,7 @@ import ru.yandex.qatools.allure.model.SeverityLevel;
  * Date: 8/30/13, 6:29 PM
  */
 @Description("Testsuite has testcases with many steps\n    and\nmany lines in description")
-public class TestWithSteps {
+public class ChartsTest {
 
     public CommonSteps commonSteps = new CommonSteps();
 

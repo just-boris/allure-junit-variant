@@ -37,6 +37,12 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
+        <!--Web Driver-->
+        <dependency>
+            <groupId>com.github.detro.ghostdriver</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.0.4</version>
+        </dependency>
     </dependencies>
 
     <!--Плагин, подключающий аллюр. Для корректной работы, должен быть подключен во всем модулях, где есть тесты или

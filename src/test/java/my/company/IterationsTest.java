@@ -14,11 +14,11 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
 @RunWith(Parameterized.class)
-public class TestParameterized {
+public class IterationsTest {
 
     private int number;
 
-    public TestParameterized(int number) {
+    public IterationsTest(int number) {
         this.number = number;
     }
 
@@ -34,7 +34,7 @@ public class TestParameterized {
     }
 
     @Test
-    public void multiTest() throws Exception {
+    public void calculationTest() throws Exception {
         Random random = new Random();
         Thread.sleep(random.nextInt(2000));
         int result = number % 10;
