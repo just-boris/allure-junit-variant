@@ -2,7 +2,6 @@ package my.company;
 
 import my.company.steps.BackendSteps;
 import my.company.steps.WebDriverSteps;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,11 +11,6 @@ import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.annotations.Title;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 @Title("Search tests")
 @Description("This testsuite has tests what always are passing")

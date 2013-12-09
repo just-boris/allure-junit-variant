@@ -4,6 +4,7 @@ import my.company.steps.CommonSteps;
 import org.junit.Test;
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Severity;
+import ru.yandex.qatools.allure.annotations.Story;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
 /**
@@ -17,6 +18,7 @@ public class ChartsTest {
 
     @Severity(SeverityLevel.CRITICAL)
     @Description("Single-line description")
+    @Story(Behaviors.MySecondFeature.MyAmazingStory.class)
     @Test
     public void attachmentsTest() throws Exception {
         commonSteps.saveJsonFile();
