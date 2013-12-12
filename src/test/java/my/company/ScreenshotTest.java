@@ -9,12 +9,13 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Severity;
+import ru.yandex.qatools.allure.annotations.Story;
 import ru.yandex.qatools.allure.annotations.Title;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
 @Title("Search tests")
 @Description("This testsuite has tests what always are passing")
-public class SearchTest {
+public class ScreenshotTest {
 
     private WebDriverSteps steps;
     private BackendSteps server;
@@ -28,6 +29,7 @@ public class SearchTest {
 
     @Test
     @Title("Page loading test")
+    @Story(Behaviors.Screenshot.WebdriverScreenshot.class)
     public void pageLoadingTest() {
         server.getLog();
         server.getResponse();
@@ -37,6 +39,7 @@ public class SearchTest {
 
     @Test
     @Title("Usual search test")
+    @Story(Behaviors.Screenshot.WebdriverScreenshot.class)
     public void usualSearch() throws InterruptedException {
         steps.search("yandex qatools");
         steps.makeScreenshot();
@@ -44,6 +47,7 @@ public class SearchTest {
 
     @Test
     @Title("Wildcard search test")
+    @Story(Behaviors.Screenshot.WebdriverScreenshot.class)
     public void wildcardSearch() throws InterruptedException {
         steps.search("qatools -yandex");
         steps.makeScreenshot();
@@ -52,6 +56,7 @@ public class SearchTest {
     @Severity(SeverityLevel.TRIVIAL)
     @Test
     @Title("Empty text search")
+    @Story(Behaviors.Screenshot.WebdriverScreenshot.class)
     public void emptyTextSearch() throws InterruptedException {
         steps.search("");
         steps.makeScreenshot();

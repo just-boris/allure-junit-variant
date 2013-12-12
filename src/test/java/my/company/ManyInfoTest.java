@@ -12,13 +12,13 @@ import ru.yandex.qatools.allure.model.SeverityLevel;
  * Date: 8/30/13, 6:29 PM
  */
 @Description("Testsuite has testcases with many steps\n    and\nmany lines in description")
-public class ChartsTest {
+public class ManyInfoTest {
 
     public CommonSteps commonSteps = new CommonSteps();
 
     @Severity(SeverityLevel.CRITICAL)
     @Description("Single-line description")
-    @Story(Behaviors.MySecondFeature.MyAmazingStory.class)
+    @Story(Behaviors.Screenshot.OtherScreenshot.class)
     @Test
     public void attachmentsTest() throws Exception {
         commonSteps.saveJsonFile();

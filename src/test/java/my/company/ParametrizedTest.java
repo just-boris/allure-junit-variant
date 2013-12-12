@@ -3,6 +3,7 @@ package my.company;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import ru.yandex.qatools.allure.annotations.Story;
 import ru.yandex.qatools.allure.annotations.Title;
 
 import java.util.ArrayList;
@@ -14,11 +15,11 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
 @RunWith(Parameterized.class)
-public class IterationsTest {
+public class ParametrizedTest {
 
     private int number;
 
-    public IterationsTest(int number) {
+    public ParametrizedTest(int number) {
         this.number = number;
     }
 
@@ -34,6 +35,7 @@ public class IterationsTest {
     }
 
     @Test
+    @Story(Behaviors.SimpleStories.ParametrizedStory.class)
     public void calculationTest() throws Exception {
         Random random = new Random();
         Thread.sleep(random.nextInt(2000));
@@ -42,11 +44,11 @@ public class IterationsTest {
             assumeTrue("Nothing to do", false);
         }
         else if(result == 1) {
-            throw new Exception("Number 1 is not expected");
+            throw new Exception("Unexpected value");
         }
         else {
             result += 1 - random.nextInt(2);
         }
-        assertTrue("My choice is", result < 8);
+        assertTrue(String.format("Expected %d less than 8 ", result), result < 8);
     }
 }

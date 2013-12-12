@@ -9,32 +9,32 @@ import ru.yandex.qatools.allure.annotations.StoryClass;
  */
 public class Behaviors {
     @FeatureClass("")
-    public class MyFirstFeature {
+    public class Screenshot {
 
         @StoryClass("")
-        public class MyFirstStory {
+        public class WebdriverScreenshot {
 
         }
 
 
         @StoryClass("")
-        public class MySecondStory {
+        public class OtherScreenshot {
 
         }
 
     }
 
     @FeatureClass("")
-    public class MySecondFeature {
+    public class SimpleStories {
 
         @StoryClass("")
-        public class MyAmazingStory {
+        public class SuccessStory {
 
         }
 
 
         @StoryClass("")
-        public class MyHorrorStory {
+        public class ParametrizedStory {
 
         }
     }

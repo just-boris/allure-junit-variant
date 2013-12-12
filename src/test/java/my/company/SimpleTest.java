@@ -2,6 +2,7 @@ package my.company;
 
 import org.junit.Test;
 import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Story;
 import ru.yandex.qatools.allure.annotations.Title;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -13,28 +14,29 @@ import static org.junit.Assume.assumeTrue;
  *         Date: 08.08.13
  */
 
-public class MainPageTest {
+public class SimpleTest {
 
     @Title("Test what do nothing and always passed right, but have a very long title, over 100 symbols, seriously")
     @Description("I hate descriptions! See the title!")
+    @Story(Behaviors.SimpleStories.SuccessStory.class)
     @Test
-    public void passedTestWithoutSteps() {
+    public void longTitleTest() {
         assertThat(4, is(2 + 2));
     }
 
     @Test
-    public void failedTestWithoutSteps() {
+    public void failedSimpleTest() {
         assertThat("5 is not 2 + 2", 5, is(2 + 2));
     }
 
     @Test
-    public void skippedTestWithoutSteps() {
+    public void skippedSimpleTest() {
         assumeTrue("Skipp it", false);
         assertThat(4, is(2 + 2));
     }
 
     @Test
-    public void brokenTestWithoutSteps() {
+    public void brokenSimpleTest() {
         assertThat(new Integer[]{}[1], is(2 + 2));
     }
 }
