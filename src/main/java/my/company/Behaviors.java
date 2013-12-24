@@ -8,32 +8,32 @@ import ru.yandex.qatools.allure.annotations.StoryClass;
  *         Date: 12/9/13
  */
 public class Behaviors {
-    @FeatureClass("")
+    @FeatureClass("Screenshot")
     public class Screenshot {
 
-        @StoryClass("")
+        @StoryClass("WebdriverScreenshot")
         public class WebdriverScreenshot {
 
         }
 
 
-        @StoryClass("")
+        @StoryClass("OtherScreenshot")
         public class OtherScreenshot {
 
         }
 
     }
 
-    @FeatureClass("")
+    @FeatureClass("SimpleStories")
     public class SimpleStories {
 
-        @StoryClass("")
+        @StoryClass("SuccessStory")
         public class SuccessStory {
 
         }
 
 
-        @StoryClass("")
+        @StoryClass("ParametrizedStory")
         public class ParametrizedStory {
 
         }
