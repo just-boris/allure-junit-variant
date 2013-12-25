@@ -3,8 +3,8 @@ package my.company;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import ru.yandex.qatools.allure.annotations.Story;
-import ru.yandex.qatools.allure.annotations.Title;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -35,7 +35,8 @@ public class ParametrizedTest {
     }
 
     @Test
-    @Story(Behaviors.SimpleStories.ParametrizedStory.class)
+    @Features(Behaviors.SimpleStories.title)
+    @Stories(Behaviors.SimpleStories.PARAMETRIZED_STORY)
     public void calculationTest() throws Exception {
         Random random = new Random();
         Thread.sleep(random.nextInt(2000));

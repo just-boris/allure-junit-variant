@@ -3,8 +3,9 @@ package my.company;
 import my.company.steps.CommonSteps;
 import org.junit.Test;
 import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Severity;
-import ru.yandex.qatools.allure.annotations.Story;
+import ru.yandex.qatools.allure.annotations.Stories;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
 /**
@@ -18,7 +19,8 @@ public class ManyInfoTest {
 
     @Severity(SeverityLevel.CRITICAL)
     @Description("Single-line description")
-    @Story(Behaviors.Screenshot.OtherScreenshot.class)
+    @Features(Behaviors.Screenshot.title)
+    @Stories(Behaviors.Screenshot.OTHER_SCREENSHOT)
     @Test
     public void attachmentsTest() throws Exception {
         commonSteps.saveJsonFile();

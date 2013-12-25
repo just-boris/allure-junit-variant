@@ -2,7 +2,8 @@ package my.company;
 
 import org.junit.Test;
 import ru.yandex.qatools.allure.annotations.Description;
-import ru.yandex.qatools.allure.annotations.Story;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 import ru.yandex.qatools.allure.annotations.Title;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -18,7 +19,8 @@ public class SimpleTest {
 
     @Title("Test what do nothing and always passed right, but have a very long title, over 100 symbols, seriously")
     @Description("I hate descriptions! See the title!")
-    @Story(Behaviors.SimpleStories.SuccessStory.class)
+    @Features(Behaviors.SimpleStories.title)
+    @Stories(Behaviors.SimpleStories.SUCCESS_STORY)
     @Test
     public void longTitleTest() {
         assertThat(4, is(2 + 2));
