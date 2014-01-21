@@ -2,11 +2,16 @@ package my.company;
 
 import my.company.steps.CommonSteps;
 import org.junit.Test;
-import ru.yandex.qatools.allure.annotations.Description;
-import ru.yandex.qatools.allure.annotations.Features;
-import ru.yandex.qatools.allure.annotations.Severity;
-import ru.yandex.qatools.allure.annotations.Stories;
+import ru.yandex.qatools.allure.Allure;
+import ru.yandex.qatools.allure.annotations.*;
+import ru.yandex.qatools.allure.events.AddParameterEvent;
 import ru.yandex.qatools.allure.model.SeverityLevel;
+
+import java.io.File;
+import java.io.IOException;
+
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertThat;
 
 /**
  * User: eroshenkoam
@@ -36,6 +41,19 @@ public class ManyInfoTest {
         commonSteps.parentStep();
         commonSteps.step("Last");
         commonSteps.makeThisTestBroken();
+    }
+
+    @Severity(SeverityLevel.NORMAL)
+    @Title("Test with long assertion text")
+    @Test
+    public void longAssertionTest() throws IOException {
+        Allure.LIFECYCLE.fire(new AddParameterEvent("PATH", System.getenv("PATH")));
+        Allure.LIFECYCLE.fire(new AddParameterEvent("BASEDIR", new File(".").getCanonicalPath()));
+        Allure.LIFECYCLE.fire(new AddParameterEvent("OS", System.getProperty("os.name")));
+        Allure.LIFECYCLE.fire(new AddParameterEvent("OS", System.getProperty("os.version")));
+        Allure.LIFECYCLE.fire(new AddParameterEvent("OS", System.getProperty("java.version")));
+        assertThat("{\n\"name\": \"test\",\n\"value\": \"bad value\"\n}",
+                equalTo("{\n\"name\": \"test\",\n\"value\": \"ok value\"\n}"));
     }
 
 }

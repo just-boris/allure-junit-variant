@@ -3,8 +3,10 @@ package my.company;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import ru.yandex.qatools.allure.Allure;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
+import ru.yandex.qatools.allure.events.AddParameterEvent;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -38,6 +40,7 @@ public class ParametrizedTest {
     @Features(Behaviors.SimpleStories.title)
     @Stories(Behaviors.SimpleStories.PARAMETRIZED_STORY)
     public void calculationTest() throws Exception {
+        Allure.LIFECYCLE.fire(new AddParameterEvent("Argument", Integer.toString(number)));
         Random random = new Random();
         Thread.sleep(random.nextInt(2000));
         int result = number % 10;
