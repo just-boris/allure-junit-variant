@@ -49,9 +49,9 @@ public class ManyInfoTest {
     public void longAssertionTest() throws IOException {
         Allure.LIFECYCLE.fire(new AddParameterEvent("PATH", System.getenv("PATH")));
         Allure.LIFECYCLE.fire(new AddParameterEvent("BASEDIR", new File(".").getCanonicalPath()));
-        Allure.LIFECYCLE.fire(new AddParameterEvent("OS", System.getProperty("os.name")));
-        Allure.LIFECYCLE.fire(new AddParameterEvent("OS", System.getProperty("os.version")));
-        Allure.LIFECYCLE.fire(new AddParameterEvent("OS", System.getProperty("java.version")));
+        Allure.LIFECYCLE.fire(new AddParameterEvent("OS_NAME", System.getProperty("os.name")));
+        Allure.LIFECYCLE.fire(new AddParameterEvent("OS_VERSION", System.getProperty("os.version")));
+        Allure.LIFECYCLE.fire(new AddParameterEvent("JAVA_VERSION", System.getProperty("java.version")));
         assertThat("{\n\"name\": \"test\",\n\"value\": \"bad value\"\n}",
                 equalTo("{\n\"name\": \"test\",\n\"value\": \"ok value\"\n}"));
     }
