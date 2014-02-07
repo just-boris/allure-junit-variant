@@ -52,6 +52,7 @@ public class ManyInfoTest {
         Allure.LIFECYCLE.fire(new AddParameterEvent("OS_NAME", System.getProperty("os.name")));
         Allure.LIFECYCLE.fire(new AddParameterEvent("OS_VERSION", System.getProperty("os.version")));
         Allure.LIFECYCLE.fire(new AddParameterEvent("JAVA_VERSION", System.getProperty("java.version")));
+        commonSteps.getSystemProperties();
         assertThat("{\n\"name\": \"test\",\n\"value\": \"bad value\"\n}",
                 equalTo("{\n\"name\": \"test\",\n\"value\": \"ok value\"\n}"));
     }

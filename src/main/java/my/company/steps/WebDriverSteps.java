@@ -10,6 +10,7 @@ import java.io.File;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static ru.yandex.qatools.matchers.webdriver.TextMatcher.text;
 
 /**
  * @author Dmitry Baev charlie@yandex-team.ru
@@ -47,7 +48,7 @@ public class WebDriverSteps {
 
     @Step("Check text in element")
     public void checkText(WebElement element, String expected) {
-        assertThat(element.getText(), is(expected));
+        assertThat("Text on current page should be correct", element, text(is(expected)));
     }
 
     public void quit() {

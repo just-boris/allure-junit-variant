@@ -45,6 +45,11 @@
             <artifactId>phantomjsdriver</artifactId>
             <version>1.0.4</version>
         </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.matchers</groupId>
+            <artifactId>webdriver-matchers</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <!--Плагин, подключающий аллюр. Для корректной работы, должен быть подключен во всем модулях, где есть тесты или

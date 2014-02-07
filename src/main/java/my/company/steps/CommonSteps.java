@@ -7,6 +7,7 @@ import ru.yandex.qatools.allure.model.AttachmentType;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 
 import static org.junit.Assert.assertTrue;
 
@@ -64,5 +65,18 @@ public class CommonSteps {
     @Attach(name = "JSON Attachment", type = AttachmentType.JSON)
     public File saveJsonFile() throws IOException {
         return new File(RESOURCES, JSON_ATTACH_FILE_NAME);
+    }
+
+    @Attach(name = "System Environment", type = AttachmentType.TXT)
+    public String getSystemProperties() {
+        Properties props = System.getProperties();
+        StringBuilder result = new StringBuilder();
+        for (String prop : props.stringPropertyNames()) {
+            result.append(prop)
+                  .append(" = ")
+                  .append(System.getProperty(prop))
+                  .append("\n");
+        }
+        return result.toString();
     }
 }

@@ -7,7 +7,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import ru.yandex.qatools.allure.Allure;
 import ru.yandex.qatools.allure.annotations.*;
+import ru.yandex.qatools.allure.events.AddParameterEvent;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
 @Title("Search tests")
@@ -32,6 +34,9 @@ public class ScreenshotTest {
         server.getLog();
         server.getResponse();
         steps.makeScreenshot();
+        Allure.LIFECYCLE.fire(new AddParameterEvent("BROWSER", "Phantom JS"));
+        Allure.LIFECYCLE.fire(new AddParameterEvent("PROD_HOST", "http://ya.ru"));
+        Allure.LIFECYCLE.fire(new AddParameterEvent("TEST_HOST", "http://test.ya.ru"));
         steps.checkText(steps.findElement("title"), "Yandex");
     }
 
