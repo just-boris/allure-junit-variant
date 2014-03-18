@@ -1,5 +1,6 @@
 package my.company;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Features;
@@ -32,8 +33,9 @@ public class SimpleTest {
     }
 
     @Test
+    @Ignore("")
     public void skippedSimpleTest() {
-        assumeTrue("Skipp it", false);
+//        assumeTrue("Skipp it", false);
         assertThat(4, is(2 + 2));
     }
 
