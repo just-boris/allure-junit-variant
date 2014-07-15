@@ -1,12 +1,13 @@
 package my.company.steps;
 
-import ru.yandex.qatools.allure.annotations.Attach;
+import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
-import ru.yandex.qatools.allure.model.AttachmentType;
 
-import java.io.File;
+import javax.ws.rs.core.MediaType;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 import static org.junit.Assert.assertTrue;
@@ -47,28 +48,28 @@ public class CommonSteps {
         step("Third nested");
     }
 
-    @Attach(name = "TXT Attachment", type = AttachmentType.TXT)
-    public File saveTxtFile() throws IOException {
-        return new File(RESOURCES, TXT_ATTACH_FILE_NAME);
+    @Attachment("TXT Attachment")
+    public byte[] saveTxtFile() throws IOException {
+        return Files.readAllBytes(Paths.get(RESOURCES, TXT_ATTACH_FILE_NAME));
     }
 
-    @Attach(name = "JPG Attachment", type = AttachmentType.JPG)
-    public File saveJpgFile() throws IOException {
-        return new File(RESOURCES, JPG_ATTACH_FILE_NAME);
+    @Attachment("JPG Attachment")
+    public byte[] saveJpgFile() throws IOException {
+        return Files.readAllBytes(Paths.get(RESOURCES, JPG_ATTACH_FILE_NAME));
     }
 
-    @Attach(name = "XML Attachment", type = AttachmentType.XML)
-    public File saveXmlFile() throws IOException {
-        return new File(RESOURCES, XML_ATTACH_FILE_NAME);
+    @Attachment("XML Attachment")
+    public byte[] saveXmlFile() throws IOException {
+        return Files.readAllBytes(Paths.get(RESOURCES, XML_ATTACH_FILE_NAME));
     }
 
-    @Attach(name = "JSON Attachment", type = AttachmentType.JSON)
-    public File saveJsonFile() throws IOException {
-        return new File(RESOURCES, JSON_ATTACH_FILE_NAME);
+    @Attachment("JSON Attachment")
+    public byte[] saveJsonFile() throws IOException {
+        return Files.readAllBytes(Paths.get(RESOURCES, JSON_ATTACH_FILE_NAME));
     }
 
-    @Attach(name = "System Environment", type = AttachmentType.TXT)
-    public String getSystemProperties() {
+    @Attachment(value = "System Environment", type = MediaType.TEXT_PLAIN)
+    public byte[] getSystemProperties() {
         Properties props = System.getProperties();
         StringBuilder result = new StringBuilder();
         for (String prop : props.stringPropertyNames()) {
@@ -77,6 +78,6 @@ public class CommonSteps {
                   .append(System.getProperty(prop))
                   .append("\n");
         }
-        return result.toString();
+        return result.toString().getBytes();
     }
 }

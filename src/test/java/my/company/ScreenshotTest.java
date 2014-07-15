@@ -4,7 +4,6 @@ import my.company.steps.BackendSteps;
 import my.company.steps.WebDriverSteps;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -28,7 +27,7 @@ public class ScreenshotTest {
         steps.openMainPage();
     }
 
-    @Test(timeout = 300000)
+    @Test
     @Title("Page loading test")
     @Stories(Behaviors.Screenshot.WEBDRIVER_SCREENSHOT)
     public void pageLoadingTest() {

@@ -24,6 +24,7 @@ public class ManyInfoTest {
 
     @Severity(SeverityLevel.CRITICAL)
     @Description("Single-line description")
+    @Title("<script>3443</script>")
     @Features(Behaviors.Screenshot.title)
     @Stories(Behaviors.Screenshot.OTHER_SCREENSHOT)
     @Test

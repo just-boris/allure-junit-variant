@@ -1,12 +1,8 @@
 package my.company.steps;
 
 import org.openqa.selenium.*;
-import ru.yandex.qatools.allure.annotations.Attach;
+import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
-import ru.yandex.qatools.allure.annotations.Title;
-import ru.yandex.qatools.allure.model.AttachmentType;
-
-import java.io.File;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -41,9 +37,9 @@ public class WebDriverSteps {
         return driver.findElement(By.cssSelector(selector));
     }
 
-    @Attach(type = AttachmentType.PNG, name = "Page Screenshot")
-    public File makeScreenshot() {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    @Attachment("Page Screenshot")
+    public byte[] makeScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
     @Step("Check text in element")

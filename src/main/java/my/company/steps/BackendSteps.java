@@ -1,19 +1,19 @@
 package my.company.steps;
 
-import org.json.JSONArray;
-import ru.yandex.qatools.allure.annotations.Attach;
-import ru.yandex.qatools.allure.model.AttachmentType;
+import ru.yandex.qatools.allure.annotations.Attachment;
+
+import javax.ws.rs.core.MediaType;
 
 public class BackendSteps {
     public BackendSteps() {
     }
 
-    @Attach(name = "Server Log", type = AttachmentType.TXT)
+    @Attachment(value="Server Log", type = MediaType.TEXT_PLAIN)
     public String getLog() {
         return "I kinda like a log";
     }
 
-    @Attach(name = "Response", type = AttachmentType.JSON)
+    @Attachment("Response")
     public String getResponse() {
         return "{\"success\": true, \"data\": {\"name\": \"\", \"value\": 0}}";
     }
