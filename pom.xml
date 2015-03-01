@@ -18,7 +18,7 @@
     <properties>
         <compiler.version>1.7</compiler.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <allure.version>1.4.1-SNAPSHOT</allure.version>
+        <allure.version>1.4.10</allure.version>
         <aspectj.version>1.7.4</aspectj.version>
     </properties>
 
@@ -138,7 +138,7 @@
                 <artifactId>allure-maven-plugin</artifactId>
                 <version>2.0</version>
                 <configuration>
-                    <reportVersion>1.4.1-SNAPSHOT</reportVersion>
+                    <reportVersion>${allure.version}</reportVersion>
                 </configuration>
             </plugin>
         </plugins>

@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.yandex.qatools.allure.Allure;
 import ru.yandex.qatools.allure.annotations.*;
 import ru.yandex.qatools.allure.events.AddParameterEvent;
+import ru.yandex.qatools.allure.model.DescriptionType;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
 @Title("Search tests")
@@ -50,6 +51,17 @@ public class ScreenshotTest {
 
     @Test
     @Title("Wildcard search test")
+    @Description(type = DescriptionType.MARKDOWN, value="### H3\n" +
+            "after this line we should collapse all of that\n" +
+            "\n" +
+            "#### H4\n" +
+            "This testsuite has tests what *always are passing*\n" +
+            "\n" +
+            "* first\n" +
+            "* second\n" +
+            "    1. subsecind\n" +
+            "    1. subsubsecind\n" +
+            "* third")
     @Stories(Behaviors.Screenshot.WEBDRIVER_SCREENSHOT)
     public void wildcardSearch() throws InterruptedException {
         steps.search("qatools -yandex");
